@@ -15,13 +15,13 @@
  * of ISO weekday digits 1..7 (e.g. "135" = Mon/Wed/Fri).
  *
  * Identity hierarchy:
- *   did:web:air-sched.etzhayyim.com                              — controller
- *   did:web:air-sched.etzhayyim.com:schedule:{designator}        — a flight schedule
- *   did:web:air-sched.etzhayyim.com:slot:{slotId}                — an airport slot
- *   did:web:air-sched.etzhayyim.com:codeshare:{codeshareId}      — a codeshare
+ *   did:web:air-sched.itonami.app                              — controller
+ *   did:web:air-sched.itonami.app:schedule:{designator}        — a flight schedule
+ *   did:web:air-sched.itonami.app:slot:{slotId}                — an airport slot
+ *   did:web:air-sched.itonami.app:codeshare:{codeshareId}      — a codeshare
  */
 
-export const AIRSCHED_DID_PREFIX = "did:web:air-sched.etzhayyim.com:" as const;
+export const AIRSCHED_DID_PREFIX = "did:web:air-sched.itonami.app:" as const;
 
 export const SCHEDULE_COLLECTION = "com.etzhayyim.apps.airSched.schedule";
 export const SLOT_COLLECTION = "com.etzhayyim.apps.airSched.slot";

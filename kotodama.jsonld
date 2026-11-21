@@ -1,6 +1,6 @@
 {
   "@context": "https://etzhayyim.com/ns/kotodama/v1",
-  "@id": "did:web:air-sched.etzhayyim.com",
+  "@id": "did:web:air-sched.itonami.app",
   "name": "air-sched",
   "nanoid": "a1rsch3d",
   "project": "air-sched",

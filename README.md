@@ -161,12 +161,12 @@ smoke はこれを**2 つの独立した印**で見る: 別の var に置いた 
 `(rc/inline "jp_go_dds/dds.css")` を `""` にして bundle を作り直すと**後者だけが
 赤くなる**ことを確認済み（`docs/operator-quickstart.md` §4.7）。
 
-## 呼び先が 1 つも解決しない（移行では直らない）
+## 呼び先に 1 つも到達できない（移行では直らない）
 
 | ホスト | 役割 | DNS（2026-08-18、`dig +short`） |
 |---|---|---|
-| `air-sched.etzhayyim.com` | 公開ホスト（wrangler の route） | **応答なし** |
-| `a1rsch3d.etzhayyim.com` | 同（nanoid 側） | **応答なし** |
+| `air-sched.itonami.app` | 公開ホスト（wrangler の route） | 解決する。応答は **522**（2026-11-21 実測） |
+| `a1rsch3d.itonami.app` | 同（nanoid 側） | 解決する。応答は **522**（2026-11-21 実測） |
 | `mcp.etzhayyim.com` | `/xrpc/:nsid` の中継先 | **応答なし** |
 | `dispatcher.etzhayyim.com` | 移行前 `src/app.ts` の proxy 先 | **応答なし** |
 
@@ -223,3 +223,14 @@ npx --yes kbb --backend sci scripts/verify-docs-claims.cljk .          # <dir> �
 
 exit 0 = 全一致 / 1 = 食い違い / **2 = 判定できなかった**（0 と区別する）。
 テストとビルドは `docs/operator-quickstart.md`。
+
+## upstream からの分岐（2026-11-21、JUN-1410）
+
+ドメインを `itonami.app` に統一する決定に合わせて、wrangler の route と `did:web` の識別子を
+`etzhayyim.com` から `itonami.app` へ移した。この app は未 deploy で、旧い識別子が解決したことは一度も無い。
+新しいホスト名（`a1rsch3d.itonami.app`、`air-sched.itonami.app`）は `itonami.app` のワイルドカードで名前が引けるが、
+Worker が bind されていないので応答は 522 になる（2026-11-21 実測）。
+
+upstream の byte と一致しなくなったファイル: `kotoba/src/types.ts`、`kotoba/test/air-sched.test.ts`、`kotodama.jsonld`。
+検証器（`scripts/`）の sha256 と byte 数は新しい内容に合わせてある。
+変えていないもの: ほかのサービスのホスト名、lexicon の名前空間、`docs/adr/`（当時の記録）。
