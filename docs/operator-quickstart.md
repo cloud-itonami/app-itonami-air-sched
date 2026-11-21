@@ -395,8 +395,8 @@ cd "$REPO"
 npx wrangler deploy
 ```
 
-**ただし route が指すホストは解決しない**（`air-sched.itonami.app` /
-`a1rsch3d.itonami.app` とも応答なし）。deploy が成功しても誰も到達できない。
+**ただし route が指すホストは応答しない**（`air-sched.itonami.app` /
+`a1rsch3d.itonami.app` とも名前は引けるが 522 を返す。2026-11-21 実測）。deploy が成功しても誰も到達できない。
 `/xrpc/` の中継先 `mcp.etzhayyim.com` も同様なので、到達できたとしても中継は
 **502 を返す**。
 

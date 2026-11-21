@@ -161,12 +161,12 @@ smoke はこれを**2 つの独立した印**で見る: 別の var に置いた 
 `(rc/inline "jp_go_dds/dds.css")` を `""` にして bundle を作り直すと**後者だけが
 赤くなる**ことを確認済み（`docs/operator-quickstart.md` §4.7）。
 
-## 呼び先が 1 つも解決しない（移行では直らない）
+## 呼び先に 1 つも到達できない（移行では直らない）
 
 | ホスト | 役割 | DNS（2026-08-18、`dig +short`） |
 |---|---|---|
-| `air-sched.itonami.app` | 公開ホスト（wrangler の route） | **応答なし** |
-| `a1rsch3d.itonami.app` | 同（nanoid 側） | **応答なし** |
+| `air-sched.itonami.app` | 公開ホスト（wrangler の route） | 解決する。応答は **522**（2026-11-21 実測） |
+| `a1rsch3d.itonami.app` | 同（nanoid 側） | 解決する。応答は **522**（2026-11-21 実測） |
 | `mcp.etzhayyim.com` | `/xrpc/:nsid` の中継先 | **応答なし** |
 | `dispatcher.etzhayyim.com` | 移行前 `src/app.ts` の proxy 先 | **応答なし** |
 
