@@ -99,7 +99,7 @@ kbb --backend sci \
 してから publish する。描いたものに `/xrpc`・`/health`・中継先・wrangler の
 var のキーが 1 つでも含まれていれば、書かずに exit 1 で止まる。
 
-## いま在るもの — 28 ファイル
+## いま在るもの — 29 ファイル
 
 | 面 | ファイル |
 |---|---|
@@ -109,7 +109,7 @@ var のキーが 1 つでも含まれていれば、書かずに exit 1 で止�
 | Worker 設定 | `wrangler.jsonc` |
 | actor 記述子 | `kotodama.jsonld` |
 | **domain library（appview ではない）** | `kotoba/`（7 ファイル、TypeScript 5 本） |
-| 由来・権利・識別 | `NOTICE` / `README.edn` / `migration.edn` / `MIGRATION-TODO.md` |
+| 由来・権利・識別 | `NOTICE` / `README.edn` / `migration.edn` / `MIGRATION-TODO.md` / `blueprint.edn` |
 | 検証 | `scripts/{smoke-worker.cljs, verify-docs-claims.cljs}` |
 | 静的版のビルド | `scripts/render-static.kotoba` |
 | 文書 | `README.md` / `docs/operator-quickstart.md` / `docs/adr/0001-*.edn` |
