@@ -26,12 +26,12 @@
   ],
   "routes": [
     {
-      "pattern": "a1rsch3d.etzhayyim.com/*",
-      "zone_name": "etzhayyim.com"
+      "pattern": "a1rsch3d.itonami.app/*",
+      "zone_name": "itonami.app"
     },
     {
-      "pattern": "air-sched.etzhayyim.com/*",
-      "zone_name": "etzhayyim.com"
+      "pattern": "air-sched.itonami.app/*",
+      "zone_name": "itonami.app"
     }
   ]
 }

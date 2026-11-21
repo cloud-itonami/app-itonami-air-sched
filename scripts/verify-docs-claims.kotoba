@@ -25,9 +25,12 @@
 
 (def root (or (first (remove #(str/starts-with? % "--") *command-line-args*)) "."))
 
+;; JUN-1410 (2026-11-21): the did:web host and the wrangler routes moved to itonami.app.
+;; kotoba/src/types.ts, kotoba/test/air-sched.test.ts, kotodama.jsonld diverged from upstream ON PURPOSE; the hashes and byte totals pinned below are the
+;; new content.
 (def claims
   {:tracked-files 28
-   :preserved-bytes 32646          ; the 12 inherited files still carried unchanged
+   :preserved-bytes 32632          ; the 12 inherited files still carried unchanged
    :svelte-artifacts 0             ; no .svelte / svelte.config / svelte-dir file survives
    :sveltekit-compat-flags 0       ; nodejs_compat / nodejs_als were adapter-cloudflare's
    :appview-ts-files 0             ; TypeScript outside kotoba/ (the appview's own)
@@ -47,11 +50,11 @@
   {"kotoba/package.json" "4a784166a54e16eaeb7e18756734c52a16be75ca497cb05657189c0d63680dfd"
    "kotoba/src/index.ts" "0d72aba5b3dc1591959d56ace040322662799d483dd1913490007c20cd440709"
    "kotoba/src/registry.ts" "f43a62c88163168267ca6c60580e3a65b54a3db2c6dcab33cccff0a68b99c48b"
-   "kotoba/src/types.ts" "06685603c09200f1541431babc76896d5e267c00394eb23d2aa31901ee1049c7"
-   "kotoba/test/air-sched.test.ts" "7a87d162cc616d888a4981cf7860cd9bd048741c19503804274afa2720846226"
+   "kotoba/src/types.ts" "df3d3d3877f3243ee634d9dabb44433c4962954f12015d699ebe411552802390"
+   "kotoba/test/air-sched.test.ts" "f52db9121587df358e4ef6d09a1fc9e59494a36b2589fb45546736bf4d50f42a"
    "kotoba/tsconfig.json" "95a429e51d6162cb7205b603f745e7604d93ffbb1ea6c346e5c6215a79ae541e"
    "kotoba/vitest.config.ts" "f82a551ef4da1c9cbf17985a3bee96eee450a3e4a46bff0d96c6150263121eff"
-   "kotodama.jsonld" "584173a38041edcfabc83b910d3e5ca7127b80a055eb6a9ff161f863fe33ea51"
+   "kotodama.jsonld" "8c8f76d4c96b8451e86ec360c1d98b54d81b8a8c605422b58cc8b60b43cc8732"
    "MIGRATION-TODO.md" "13489112c5d306946b8e3a1e63731aa1f4ace7e484df65714d4836f3e6bd07a0"
    "NOTICE" "9d3bd5678f857c647a465987cd8538580215416648991fd9de47e6dc648544f0"
    "README.edn" "6660a08d57f38ea02d064ee0d8252cda01de43ae8f376d5908492ba3f4dea435"

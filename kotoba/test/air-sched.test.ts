@@ -28,7 +28,7 @@ const base = {
 describe("air-sched kotoba", () => {
   let e: any;
   beforeEach(() => {
-    e = new MockEtzhayyim({ did: "did:web:air-sched.etzhayyim.com" });
+    e = new MockEtzhayyim({ did: "did:web:air-sched.itonami.app" });
   });
 
   describe("schedule", () => {
